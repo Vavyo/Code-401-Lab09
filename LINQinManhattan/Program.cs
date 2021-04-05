@@ -27,6 +27,17 @@ namespace LINQinManhattan
                 Console.WriteLine(i);
             }
             Console.WriteLine(results.Count());
+            var stuff =
+                from c in collection.features
+                select c.properties.neighborhood;
+            results = stuff.Where(s => s != "");
+            results = results.Distinct();
+            foreach (string i in results)
+            {
+                Console.WriteLine(i);
+            }
+            Console.WriteLine(results.Count());
+
             /*
                 foreach(string i in results)
                 {
