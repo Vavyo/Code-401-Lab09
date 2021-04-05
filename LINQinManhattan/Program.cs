@@ -25,6 +25,16 @@ namespace LINQinManhattan
                 Console.WriteLine(i);
             }
             Console.WriteLine(results.Count());
+            results =
+                from c in results
+                where c != ""
+                select c;
+            foreach (string i in results)
+            {
+                Console.WriteLine(i);
+            }
+            Console.WriteLine(results.Count());
+
         }
     }
 }
