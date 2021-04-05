@@ -24,6 +24,7 @@ namespace LINQinManhattan
             {
                 Console.WriteLine(i);
             }
+            Console.WriteLine(results.Count());
         }
     }
 }
