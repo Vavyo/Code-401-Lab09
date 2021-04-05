@@ -19,28 +19,36 @@ namespace LINQinManhattan
             FeatureCollection collection = JsonConvert.DeserializeObject<FeatureCollection>(File.ReadAllText(@"E:\Delta V\401\Code-401-Lab09\data.json"));
             var results =
                 from c in collection.features
-                select c.properties.neighborhood;
-            foreach(string i in results)
-            {
-                Console.WriteLine(i);
-            }
-            Console.WriteLine(results.Count());
-            results =
-                from c in results
-                where c != ""
-                select c;
-            foreach (string i in results)
-            {
-                Console.WriteLine(i);
-            }
-            Console.WriteLine(results.Count());
+                where c.properties.neighborhood != ""
+                select  c.properties.neighborhood;
             results = results.Distinct();
             foreach (string i in results)
             {
                 Console.WriteLine(i);
             }
             Console.WriteLine(results.Count());
-
+            /*
+                foreach(string i in results)
+                {
+                    Console.WriteLine(i);
+                }
+                Console.WriteLine(results.Count());
+                results =
+                    from c in results
+                    where c != ""
+                    select c;
+                foreach (string i in results)
+                {
+                    Console.WriteLine(i);
+                }
+                Console.WriteLine(results.Count());
+                results = results.Distinct();
+                foreach (string i in results)
+                {
+                    Console.WriteLine(i);
+                }
+                Console.WriteLine(results.Count());
+            */
         }
     }
 }
