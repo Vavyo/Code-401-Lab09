@@ -34,6 +34,12 @@ namespace LINQinManhattan
                 Console.WriteLine(i);
             }
             Console.WriteLine(results.Count());
+            results = results.Distinct();
+            foreach (string i in results)
+            {
+                Console.WriteLine(i);
+            }
+            Console.WriteLine(results.Count());
 
         }
     }
